@@ -89,16 +89,6 @@ img {
     display: block;
 }
 
-/* Hide decorative icon fonts site-wide */
-.fas,
-.far,
-.fab,
-.fa-solid,
-.fa-regular,
-.fa-brands {
-    display: none !important;
-}
-
 .container {
     width: 100%;
     max-width: 1280px;
@@ -536,6 +526,7 @@ img {
 .hero-stats {
     display: flex;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .stat-item {
@@ -545,6 +536,7 @@ img {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     min-width: 120px;
+    flex: 1 1 auto;
 }
 
 .stat-number {
@@ -1465,13 +1457,18 @@ img {
         transform: rotate(-45deg) translate(7px, -6px);
     }
     
-    .nav-actions .btn-outline {
+    .nav-actions .btn-outline,
+    .nav-actions .btn-go {
         display: none;
     }
 
     .logo-mark {
         width: 32px;
         height: 32px;
+    }
+
+    .logo span {
+        font-size: 1rem;
     }
     
     .hero {
@@ -1495,14 +1492,24 @@ img {
     }
     
     .hero-stats {
-        gap: 24px;
+        gap: 12px;
         justify-content: center;
     }
-    
-    .stat-number {
-        font-size: 1.8rem;
+
+    .stat-item {
+        min-width: 0;
+        flex: 1 1 0;
+        padding: 12px 10px;
     }
-    
+
+    .stat-number {
+        font-size: 1.6rem;
+    }
+
+    .stat-label {
+        font-size: 0.78rem;
+    }
+
     .floating-card {
         display: none;
     }
@@ -1573,5 +1580,21 @@ img {
     .service-media {
         margin: -28px -24px 16px;
         height: 165px;
+    }
+
+    .hero-stats {
+        gap: 8px;
+    }
+
+    .stat-item {
+        padding: 10px 6px;
+    }
+
+    .stat-number {
+        font-size: 1.3rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
     }
 }

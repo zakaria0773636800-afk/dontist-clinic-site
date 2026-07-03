@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize AOS Animation Library
-    AOS.init({
-        once: true,
-        offset: 100,
-        duration: 800,
-        easing: 'ease-out-cubic'
-    });
+    // Initialize AOS Animation Library (skip gracefully if the CDN failed to load)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic'
+        });
+    }
 
     // Header scroll effect
     const header = document.getElementById('header');
