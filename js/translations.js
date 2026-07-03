@@ -2,8 +2,8 @@
 const translations = {
     ar: {
         // Meta
-        pageTitle: "دكتور مالك إبراهيم | عيادة أسنان في الجزائر",
-        metaDescription: "عيادة دكتور مالك إبراهيم - أفضل عيادة أسنان في الجزائر. نقدم خدمات تبييض الأسنان، التقويم، زراعة الأسنان وعلاج التسوس بأحدث التقنيات.",
+        pageTitle: "د. أحمد النور | عيادة أسنان في الجزائر",
+        metaDescription: "عيادة د. أحمد النور - أفضل عيادة أسنان في الجزائر. نقدم خدمات تبييض الأسنان، التقويم، زراعة الأسنان وعلاج التسوس بأحدث التقنيات.",
         
         // Navigation
         navHome: "الرئيسية",
@@ -13,12 +13,13 @@ const translations = {
         navGallery: "معرض الصور",
         navContact: "تواصل معنا",
         navCall: "اتصل الآن",
+        navGoTo: "اذهب إليه",
         
         // Hero
         heroBadge: "رعاية سنية راقية بمعايير عالمية",
         heroTitle1: "ابتسامتك عنوان أناقتك",
         heroTitle2: "ونحن نصنعها بإتقان",
-        heroDesc: "في عيادة د. مالك إبراهيم، نمنحك تجربة علاجية فاخرة تجمع بين الدقة الطبية والراحة النفسية. من الاستشارة الأولى حتى النتيجة النهائية، نهتم بكل تفصيلة لتغادر بابتسامة واثقة ومشرقة.",
+        heroDesc: "في عيادة د. أحمد النور، نمنحك تجربة علاجية فاخرة تجمع بين الدقة الطبية والراحة النفسية. من الاستشارة الأولى حتى النتيجة النهائية، نهتم بكل تفصيلة لتغادر بابتسامة واثقة ومشرقة.",
         heroBook: "احجز موعدك الآن",
         heroCall: "اتصل مباشرة",
         statExp: "سنة خبرة",
@@ -59,9 +60,9 @@ const translations = {
         
         // About
         aboutSubtitle: "عن الطبيب",
-        aboutTitle: "د. مالك إبراهيم",
+        aboutTitle: "د. أحمد النور",
         aboutRole: "اختصاصي في طب وتجميل الأسنان",
-        aboutDesc: "يمتلك الدكتور مالك إبراهيم خبرة تتجاوز 15 عاماً في طب الأسنان العلاجي والتجميلي. يجمع في منهجه بين الحس الجمالي والدقة الطبية، مع متابعة شخصية لكل حالة للوصول إلى نتائج طبيعية تدوم.",
+        aboutDesc: "يمتلك الدكتور أحمد النور خبرة تتجاوز 15 عاماً في طب الأسنان العلاجي والتجميلي. يجمع في منهجه بين الحس الجمالي والدقة الطبية، مع متابعة شخصية لكل حالة للوصول إلى نتائج طبيعية تدوم.",
         aboutFeat1: "شهادة الدكتوراه في طب الأسنان التجميلي",
         aboutFeat2: "عضو في الجمعية الجزائرية لطب الأسنان",
         aboutFeat3: "خبرة في أكثر من 5000 عملية ناجحة",
@@ -77,7 +78,7 @@ const translations = {
         review1: '"تجربة راقية من أول استقبال حتى نهاية الجلسة. الدقة والاهتمام بالتفاصيل واضحان، والنتيجة فاقت توقعاتي."',
         review1Name: "محمد كمال",
         review1Role: "مريض تبييض أسنان",
-        review2: '"كنت مترددة قبل العلاج، لكن أسلوب الدكتور مالك الهادئ والمطمئن أعطاني ثقة كبيرة. تجربة الزراعة كانت ممتازة بكل المقاييس."',
+        review2: '"كنت مترددة قبل العلاج، لكن أسلوب الدكتور أحمد الهادئ والمطمئن أعطاني ثقة كبيرة. تجربة الزراعة كانت ممتازة بكل المقاييس."',
         review2Name: "فاطمة زهراء",
         review2Role: "مريضة زراعة أسنان",
         review3: '"ابني كان يعاني من تسوس في أسنانه، والحمد لله تم علاجه بشكل ممتاز. العيادة مناسبة للأطفال والأطباء صبورون جداً."',
@@ -122,7 +123,7 @@ const translations = {
         footerQuick: "روابط سريعة",
         footerServices: "خدماتنا",
         footerContact: "معلومات التواصل",
-        footerCopyright: "© 2026 دكتور مالك إبراهيم. جميع الحقوق محفوظة.",
+        footerCopyright: "© 2026 د. أحمد النور. جميع الحقوق محفوظة.",
         
         // Modal
         modalTitle: "تم استلام طلبك بنجاح",
@@ -134,8 +135,8 @@ const translations = {
     },
     fr: {
         // Meta
-        pageTitle: "Dr. Malek Ibrahim | Cabinet Dentaire en Algérie",
-        metaDescription: "Cabinet du Dr. Malek Ibrahim - Soins dentaires haut de gamme en Algérie: blanchiment, orthodontie, implants et traitement des caries avec les dernières technologies.",
+        pageTitle: "Dr. Ahmed Alnour | Cabinet Dentaire en Algérie",
+        metaDescription: "Cabinet du Dr. Ahmed Alnour - Soins dentaires haut de gamme en Algérie: blanchiment, orthodontie, implants et traitement des caries avec les dernières technologies.",
         
         // Navigation
         navHome: "Accueil",
@@ -145,6 +146,7 @@ const translations = {
         navGallery: "Galerie",
         navContact: "Contact",
         navCall: "Appelez Maintenant",
+        navGoTo: "Aller au Contact",
         
         // Hero
         heroBadge: "Meilleur Cabinet Dentaire en Algérie",
@@ -191,9 +193,9 @@ const translations = {
         
         // About
         aboutSubtitle: "Le Médecin",
-        aboutTitle: "Dr. Malek Ibrahim",
+        aboutTitle: "Dr. Ahmed Alnour",
         aboutRole: "Spécialiste en Médecine et Esthétique Dentaire",
-        aboutDesc: "Le Dr. Malek Ibrahim possède plus de 15 ans d'expérience dans le domaine de la médecine dentaire esthétique et thérapeutique. Diplômé de prestigieuses universités européennes, il croit en une prise en charge personnalisée de chaque patient en mettant l'accent sur le confort et des résultats naturels.",
+        aboutDesc: "Le Dr. Ahmed Alnour possède plus de 15 ans d'expérience dans le domaine de la médecine dentaire esthétique et thérapeutique. Diplômé de prestigieuses universités européennes, il croit en une prise en charge personnalisée de chaque patient en mettant l'accent sur le confort et des résultats naturels.",
         aboutFeat1: "Doctorat en Médecine Dentaire Esthétique",
         aboutFeat2: "Membre de la Société Algérienne d'Odontologie",
         aboutFeat3: "Plus de 5000 interventions réussies",
@@ -206,10 +208,10 @@ const translations = {
         reviewsSubtitle: "Avis des Patients",
         reviewsTitle: "Ce Que Disent Nos Patients",
         reviewsDesc: "Nous sommes fiers de la confiance de milliers de patients qui nous ont choisis pour prendre soin de leur sourire",
-        review1: "\"Une expérience exceptionnelle du début à la fin. La clinique est très propre et l'équipe est professionnelle. Le résultat du blanchiment était incroyable, je recommande vivement le Dr. Malek.\"",
+        review1: "\"Une expérience exceptionnelle du début à la fin. La clinique est très propre et l'équipe est professionnelle. Le résultat du blanchiment était incroyable, je recommande vivement le Dr. Ahmed.\"",
         review1Name: "Mohamed Kamel",
         review1Role: "Patient Blanchiment",
-        review2: "\"J'avais très peur de visiter le dentiste mais le Dr. Malek m'a immédiatement mise à l'aise. L'implant dentaire a été un succès, merci beaucoup.\"",
+        review2: "\"J'avais très peur de visiter le dentiste mais le Dr. Ahmed m'a immédiatement mise à l'aise. L'implant dentaire a été un succès, merci beaucoup.\"",
         review2Name: "Fatima Zahra",
         review2Role: "Patient Implant",
         review3: "\"Mon fils souffrait de caries dentaires, et grâce à Dieu il a été traité parfaitement. La clinique est adaptée aux enfants et les médecins sont très patients.\"",
@@ -254,11 +256,11 @@ const translations = {
         footerQuick: "Liens Rapides",
         footerServices: "Nos Services",
         footerContact: "Coordonnées",
-        footerCopyright: "© 2026 Dr. Malek Ibrahim. Tous droits réservés.",
+        footerCopyright: "© 2026 Dr. Ahmed Alnour. Tous droits réservés.",
         
         // Modal
         modalTitle: "Votre Demande a été Reçue",
-        modalDesc: "Nous vous contacterons bientôt pour confirmer votre rendez-vous. Merci d'avoir choisi le Dr. Malek Ibrahim.",
+        modalDesc: "Nous vous contacterons bientôt pour confirmer votre rendez-vous. Merci d'avoir choisi le Dr. Ahmed Alnour.",
         modalBtn: "D'accord",
         
         // WhatsApp

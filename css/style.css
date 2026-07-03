@@ -89,6 +89,16 @@ img {
     display: block;
 }
 
+/* Hide decorative icon fonts site-wide */
+.fas,
+.far,
+.fab,
+.fa-solid,
+.fa-regular,
+.fa-brands {
+    display: none !important;
+}
+
 .container {
     width: 100%;
     max-width: 1280px;
@@ -287,6 +297,14 @@ img {
     font-size: 1.15rem;
 }
 
+.logo-mark {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
 .logo i {
     width: 42px;
     height: 42px;
@@ -328,39 +346,44 @@ img {
 .language-switcher {
     display: flex;
     align-items: center;
-    background: var(--light);
+    background: transparent;
     border-radius: var(--radius-full);
-    padding: 3px;
-    border: 1px solid #e2e8f0;
+    padding: 0;
+    border: none;
 }
 
 .lang-btn {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 7px 12px;
+    gap: 5px;
+    padding: 4px 8px;
     border: none;
-    background: var(--white);
+    background: transparent;
     border-radius: var(--radius-full);
     cursor: pointer;
     font-family: 'Cairo', sans-serif;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 11px;
     color: var(--primary-dark);
     transition: var(--transition);
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
 }
 
 .lang-btn img {
-    width: 18px;
-    height: 14px;
+    width: 14px;
+    height: 11px;
     border-radius: 2px;
     object-fit: cover;
 }
 
 .lang-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    transform: none;
+    color: var(--primary);
+}
+
+.btn-go {
+    padding: 10px 16px;
+    font-size: 13px;
 }
 
 .mobile-toggle {
@@ -467,7 +490,7 @@ img {
 .hero-title {
     font-size: 3.6rem;
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.24;
     color: var(--dark);
     margin-bottom: 26px;
 }
@@ -479,6 +502,7 @@ img {
     background-clip: text;
     position: relative;
     display: inline-block;
+    padding-bottom: 0.08em;
 }
 
 .hero-title .highlight::after {
@@ -647,6 +671,11 @@ img {
     font-size: 1.4rem;
     flex-shrink: 0;
     box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.35);
+}
+
+.feature-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .feature-text h4 {
@@ -1037,6 +1066,11 @@ img {
     flex-shrink: 0;
 }
 
+.contact-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
 .contact-item h4 {
     color: var(--dark);
     font-weight: 700;
@@ -1144,6 +1178,22 @@ img {
     min-height: 120px;
 }
 
+.form-group input[type="date"] {
+    appearance: none;
+    min-height: 52px;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.phone-ltr {
+    direction: ltr;
+    unicode-bidi: bidi-override;
+    display: inline-block;
+}
+
 /* Footer */
 .footer {
     background: var(--dark);
@@ -1171,6 +1221,11 @@ img {
 .footer-brand .logo {
     color: var(--white);
     margin-bottom: 20px;
+}
+
+.footer-brand .logo .logo-mark {
+    width: 46px;
+    height: 46px;
 }
 
 .footer-brand p {
@@ -1217,6 +1272,12 @@ img {
     text-align: center;
     color: var(--gray-light);
     font-size: 0.95rem;
+}
+
+.credit-line {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #c7d4e3;
 }
 
 /* WhatsApp Float */
@@ -1406,6 +1467,11 @@ img {
     
     .nav-actions .btn-outline {
         display: none;
+    }
+
+    .logo-mark {
+        width: 36px;
+        height: 36px;
     }
     
     .hero {
