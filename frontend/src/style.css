@@ -42,6 +42,10 @@
 
 html {
     scroll-behavior: smooth;
+    /* AOS slide animations translate elements 100px sideways before they
+       enter; without clipping here too (body alone is not enough), RTL
+       pages gain a horizontal pan on phones that cuts off content. */
+    overflow-x: hidden;
 }
 
 body {
@@ -1597,4 +1601,71 @@ img {
     .stat-label {
         font-size: 0.7rem;
     }
+}
+
+/* Anchored sections stop below the fixed header when scrolled to */
+section[id] {
+    scroll-margin-top: 90px;
+}
+
+/* Language switcher flag (inline SVG, works offline) */
+.lang-btn svg {
+    width: 14px;
+    height: 11px;
+    border-radius: 2px;
+    display: block;
+}
+
+/* Gallery lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.lightbox-content img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-content p {
+    color: #fff;
+    margin-top: 16px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--primary, #0ea5e9);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
