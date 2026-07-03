@@ -148,45 +148,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', setActiveLink);
 
-    // Counter animation
+    // Keep hero stats fixed to avoid distracting re-animation
     const statNumbers = document.querySelectorAll('.stat-number');
-    let counted = false;
-    
-    function animateCounters() {
-        const statsSection = document.querySelector('.hero-stats');
-        if (!statsSection) {
-            return;
+    statNumbers.forEach((stat) => {
+        const target = parseInt(stat.getAttribute('data-count'), 10);
+        if (!Number.isNaN(target)) {
+            stat.textContent = target;
         }
-        const sectionTop = statsSection.offsetTop;
-        const windowHeight = window.innerHeight;
-        
-        if (window.scrollY + windowHeight > sectionTop && !counted) {
-            counted = true;
-            
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-count'));
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-                
-                const updateCounter = () => {
-                    current += step;
-                    if (current < target) {
-                        stat.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        stat.textContent = target;
-                    }
-                };
-                
-                updateCounter();
-            });
-        }
-    }
-    
-    window.addEventListener('scroll', animateCounters);
-    // Trigger once on load in case section is visible
-    animateCounters();
+    });
 
     // Appointment form handling
     const appointmentForm = document.getElementById('appointmentForm');

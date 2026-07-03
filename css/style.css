@@ -298,8 +298,8 @@ img {
 }
 
 .logo-mark {
-    width: 42px;
-    height: 42px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
     display: block;
     flex-shrink: 0;
@@ -490,7 +490,7 @@ img {
 .hero-title {
     font-size: 3.6rem;
     font-weight: 800;
-    line-height: 1.24;
+    line-height: 1.32;
     color: var(--dark);
     margin-bottom: 26px;
 }
@@ -502,16 +502,16 @@ img {
     background-clip: text;
     position: relative;
     display: inline-block;
-    padding-bottom: 0.08em;
+    padding-bottom: 0.16em;
 }
 
 .hero-title .highlight::after {
     content: '';
     position: absolute;
-    bottom: 5px;
+    bottom: 1px;
     left: 0;
     right: 0;
-    height: 12px;
+    height: 10px;
     background: linear-gradient(90deg, var(--primary-light), var(--secondary-light));
     opacity: 0.5;
     border-radius: var(--radius-full);
@@ -1224,8 +1224,8 @@ img {
 }
 
 .footer-brand .logo .logo-mark {
-    width: 46px;
-    height: 46px;
+    width: 40px;
+    height: 40px;
 }
 
 .footer-brand p {
@@ -1470,8 +1470,8 @@ img {
     }
 
     .logo-mark {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
     }
     
     .hero {
