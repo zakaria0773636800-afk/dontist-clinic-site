@@ -112,6 +112,7 @@ const translations = {
         formPhonePlaceholder: "05XX XXX XXX",
         formService: "الخدمة المطلوبة",
         formServiceSelect: "اختر الخدمة",
+        formServiceConsultation: "استشارة عامة",
         formDate: "التاريخ المفضل",
         formMessage: "ملاحظات إضافية",
         formMessagePlaceholder: "اكتب أي ملاحظات أو أعراض",
@@ -245,6 +246,7 @@ const translations = {
         formPhonePlaceholder: "05XX XXX XXX",
         formService: "Service Souhaité",
         formServiceSelect: "Choisir un service",
+        formServiceConsultation: "Consultation Générale",
         formDate: "Date Préférée",
         formMessage: "Remarques Supplémentaires",
         formMessagePlaceholder: "Écrivez vos remarques ou symptômes",
@@ -268,11 +270,4 @@ const translations = {
     }
 };
 
-if (typeof window !== 'undefined') {
-    window.translations = translations;
-}
-
-// Export for use in main.js
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = translations;
-}
+export default translations;
