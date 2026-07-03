@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FCE7F3"/>
+      <stop offset="1" stop-color="#E9D5FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <circle cx="450" cy="220" r="80" fill="#0EA5E9"/>
+  <rect x="320" y="315" width="260" height="160" rx="80" fill="#0EA5E9"/>
+  <circle cx="420" cy="220" r="10" fill="#fff"/>
+  <circle cx="480" cy="220" r="10" fill="#fff"/>
+  <path d="M420 258C430 272 438 278 450 278C462 278 470 272 480 258" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+  <text x="450" y="550" text-anchor="middle" fill="#0F172A" font-family="Cairo, Arial" font-size="44" font-weight="700">Pediatric Dentistry</text>
+</svg>

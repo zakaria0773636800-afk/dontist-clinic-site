@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | دكتور مالك إبراهيم</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-tooth"></i>
+                    <span>د. مالك إبراهيم</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle" aria-label="إغلاق القائمة">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" data-section="overview">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>نظرة عامة</span>
+                </a>
+                <a href="#appointments" class="nav-item" data-section="appointments">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>الحجوزات</span>
+                    <span class="badge" id="appointmentsBadge">0</span>
+                </a>
+                <a href="#patients" class="nav-item" data-section="patients">
+                    <i class="fas fa-users"></i>
+                    <span>المرضى</span>
+                    <span class="badge" id="patientsBadge">0</span>
+                </a>
+                <a href="#calendar" class="nav-item" data-section="calendar">
+                    <i class="fas fa-calendar-day"></i>
+                    <span>التقويم</span>
+                </a>
+                <a href="#services" class="nav-item" data-section="services">
+                    <i class="fas fa-tooth"></i>
+                    <span>الخدمات</span>
+                </a>
+                <a href="#settings" class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>الإعدادات</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="../index.html" class="btn btn-outline btn-sm" target="_blank">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>عرض الموقع</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="globalSearch" placeholder="البحث في الحجوزات والمرضى...">
+                </div>
+                
+                <div class="header-actions">
+                    <button class="action-btn" id="notificationsBtn" aria-label="الإشعارات">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+                    
+                    <div class="user-profile">
+                        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="صورة الطبيب">
+                        <div>
+                            <span class="user-name">د. مالك إبراهيم</span>
+                            <span class="user-role">مدير العيادة</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <section class="content-section active" id="overview">
+                <div class="section-header">
+                    <div>
+                        <h1>نظرة عامة</h1>
+                        <p>إحصائيات وتحليلات العيادة</p>
+                    </div>
+                    <div class="date-filter">
+                        <button class="filter-btn active" data-period="today">اليوم</button>
+                        <button class="filter-btn" data-period="week">هذا الأسبوع</button>
+                        <button class="filter-btn" data-period="month">هذا الشهر</button>
+                        <button class="filter-btn" data-period="year">هذه السنة</button>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card primary">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalAppointments">0</span>
+                            <span class="stat-label">إجمالي الحجوزات</span>
+                        </div>
+                        <div class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+12%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card success">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="confirmedAppointments">0</span>
+                            <span class="stat-label">حجوزات مؤكدة</span>
+                        </div>
+                        <div class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+8%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card warning">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="pendingAppointments">0</span>
+                            <span class="stat-label">في انتظار التأكيد</span>
+                        </div>
+                        <div class="stat-trend down">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>-3%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card info">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalPatients">0</span>
+                            <span class="stat-label">إجمالي المرضى</span>
+                        </div>
+                        <div class="stat-trend up">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+15%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>الحجوزات حسب الشهر</h3>
+                            <button class="btn-icon"><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="appointmentsChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>الخدمات الأكثر طلباً</h3>
+                            <button class="btn-icon"><i class="fas fa-ellipsis-h"></i></button>
+                        </div>
+                        <div class="chart-body">
+                            <canvas id="servicesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recent-section">
+                    <div class="section-card">
+                        <div class="card-header">
+                            <h3>آخر الحجوزات</h3>
+                            <a href="#appointments" class="view-all" data-nav="appointments">عرض الكل</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>المريض</th>
+                                        <th>الخدمة</th>
+                                        <th>التاريخ</th>
+                                        <th>الحالة</th>
+                                        <th>إجراء</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentAppointmentsTable">
+                                    <!-- Filled by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointments Section -->
+            <section class="content-section" id="appointments">
+                <div class="section-header">
+                    <div>
+                        <h1>إدارة الحجوزات</h1>
+                        <p>متابعة وتنظيم مواعيد المرضى</p>
+                    </div>
+                    <button class="btn btn-primary" id="addAppointmentBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>حجز جديد</span>
+                    </button>
+                </div>
+                
+                <div class="filters-bar">
+                    <div class="filter-group">
+                        <label>الحالة:</label>
+                        <select id="statusFilter">
+                            <option value="all">الكل</option>
+                            <option value="pending">في الانتظار</option>
+                            <option value="confirmed">مؤكد</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="cancelled">ملغي</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>الخدمة:</label>
+                        <select id="serviceFilter">
+                            <option value="all">الكل</option>
+                            <option value="whitening">تبييض الأسنان</option>
+                            <option value="braces">تقويم الأسنان</option>
+                            <option value="implant">زراعة الأسنان</option>
+                            <option value="filling">علاج التسوس</option>
+                            <option value="cleaning">تنظيف الأسنان</option>
+                            <option value="pediatric">طب أسنان الأطفال</option>
+                            <option value="consultation">استشارة عامة</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>من:</label>
+                        <input type="date" id="dateFromFilter">
+                    </div>
+                    <div class="filter-group">
+                        <label>إلى:</label>
+                        <input type="date" id="dateToFilter">
+                    </div>
+                    <button class="btn btn-outline btn-sm" id="resetFilters">
+                        <i class="fas fa-redo"></i>
+                        <span>إعادة تعيين</span>
+                    </button>
+                </div>
+                
+                <div class="section-card">
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="selectAll"></th>
+                                    <th>المريض</th>
+                                    <th>رقم الهاتف</th>
+                                    <th>الخدمة</th>
+                                    <th>التاريخ</th>
+                                    <th>ملاحظات</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointmentsTable">
+                                <!-- Filled by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="page-btn" id="prevPage"><i class="fas fa-chevron-right"></i></button>
+                        <div class="page-numbers" id="pageNumbers"></div>
+                        <button class="page-btn" id="nextPage"><i class="fas fa-chevron-left"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Patients Section -->
+            <section class="content-section" id="patients">
+                <div class="section-header">
+                    <div>
+                        <h1>سجل المرضى</h1>
+                        <p>إدارة بيانات المرضى والسجل الطبي</p>
+                    </div>
+                    <button class="btn btn-primary" id="addPatientBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>مريض جديد</span>
+                    </button>
+                </div>
+                
+                <div class="patients-grid" id="patientsGrid">
+                    <!-- Filled by JS -->
+                </div>
+            </section>
+
+            <!-- Calendar Section -->
+            <section class="content-section" id="calendar">
+                <div class="section-header">
+                    <div>
+                        <h1>التقويم</h1>
+                        <p>عرض المواعيد الشهري</p>
+                    </div>
+                    <div class="calendar-nav">
+                        <button class="btn btn-outline btn-sm" id="prevMonth">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <h2 id="currentMonth">يوليو 2026</h2>
+                        <button class="btn btn-outline btn-sm" id="nextMonth">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="section-card calendar-card">
+                    <div class="calendar-grid" id="calendarGrid">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section class="content-section" id="services">
+                <div class="section-header">
+                    <div>
+                        <h1>الخدمات</h1>
+                        <p>إدارة خدمات العيادة والأسعار</p>
+                    </div>
+                    <button class="btn btn-primary" id="addServiceBtn">
+                        <i class="fas fa-plus"></i>
+                        <span>خدمة جديدة</span>
+                    </button>
+                </div>
+                
+                <div class="services-list" id="servicesList">
+                    <!-- Filled by JS -->
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section class="content-section" id="settings">
+                <div class="section-header">
+                    <div>
+                        <h1>الإعدادات</h1>
+                        <p>تخصيص إعدادات العيادة</p>
+                    </div>
+                </div>
+                
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-clinic-medical"></i> معلومات العيادة</h3>
+                        <form class="settings-form" id="clinicSettingsForm">
+                            <div class="form-group">
+                                <label>اسم العيادة</label>
+                                <input type="text" value="عيادة دكتور مالك إبراهيم">
+                            </div>
+                            <div class="form-group">
+                                <label>العنوان</label>
+                                <input type="text" value="حي حسين داي، الجزائر العاصمة">
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الهاتف</label>
+                                <input type="tel" value="+213 555 123 456">
+                            </div>
+                            <div class="form-group">
+                                <label>البريد الإلكتروني</label>
+                                <input type="email" value="contact@dentalcare-dz.com">
+                            </div>
+                            <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3><i class="fas fa-clock"></i> ساعات العمل</h3>
+                        <form class="settings-form" id="workingHoursForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>من</label>
+                                    <input type="time" value="09:00">
+                                </div>
+                                <div class="form-group">
+                                    <label>إلى</label>
+                                    <input type="time" value="19:00">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>أيام العمل</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox"><input type="checkbox" checked> السبت</label>
+                                    <label class="checkbox"><input type="checkbox" checked> الأحد</label>
+                                    <label class="checkbox"><input type="checkbox" checked> الاثنين</label>
+                                    <label class="checkbox"><input type="checkbox" checked> الثلاثاء</label>
+                                    <label class="checkbox"><input type="checkbox" checked> الأربعاء</label>
+                                    <label class="checkbox"><input type="checkbox" checked> الخميس</label>
+                                    <label class="checkbox"><input type="checkbox"> الجمعة</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">حفظ التغييرات</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3><i class="fas fa-database"></i> إدارة البيانات</h3>
+                        <div class="data-actions">
+                            <button class="btn btn-outline" id="exportData">
+                                <i class="fas fa-file-export"></i>
+                                <span>تصدير البيانات</span>
+                            </button>
+                            <button class="btn btn-outline" id="importData">
+                                <i class="fas fa-file-import"></i>
+                                <span>استيراد البيانات</span>
+                            </button>
+                            <button class="btn btn-danger" id="clearData">
+                                <i class="fas fa-trash-alt"></i>
+                                <span>مسح جميع البيانات</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Appointment Modal -->
+    <div class="modal" id="appointmentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="appointmentModalTitle">حجز جديد</h3>
+                <button class="modal-close" data-close="appointmentModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="appointmentForm">
+                <input type="hidden" id="appointmentId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>اسم المريض</label>
+                        <input type="text" id="appointmentName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف</label>
+                        <input type="tel" id="appointmentPhone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>الخدمة</label>
+                        <select id="appointmentService" required>
+                            <option value="whitening">تبييض الأسنان</option>
+                            <option value="braces">تقويم الأسنان</option>
+                            <option value="implant">زراعة الأسنان</option>
+                            <option value="filling">علاج التسوس</option>
+                            <option value="cleaning">تنظيف الأسنان</option>
+                            <option value="pediatric">طب أسنان الأطفال</option>
+                            <option value="consultation">استشارة عامة</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>التاريخ</label>
+                        <input type="date" id="appointmentDate" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>الوقت</label>
+                        <input type="time" id="appointmentTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الحالة</label>
+                        <select id="appointmentStatus">
+                            <option value="pending">في الانتظار</option>
+                            <option value="confirmed">مؤكد</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="cancelled">ملغي</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>ملاحظات</label>
+                    <textarea id="appointmentNotes" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" data-close="appointmentModal">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ الحجز</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Patient Modal -->
+    <div class="modal" id="patientModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="patientModalTitle">مريض جديد</h3>
+                <button class="modal-close" data-close="patientModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="patientForm">
+                <input type="hidden" id="patientId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>اسم المريض</label>
+                        <input type="text" id="patientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف</label>
+                        <input type="tel" id="patientPhone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>تاريخ الميلاد</label>
+                        <input type="date" id="patientBirthDate">
+                    </div>
+                    <div class="form-group">
+                        <label>الجنس</label>
+                        <select id="patientGender">
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>العنوان</label>
+                    <input type="text" id="patientAddress">
+                </div>
+                <div class="form-group">
+                    <label>السجل الطبي / ملاحظات</label>
+                    <textarea id="patientNotes" rows="4"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" data-close="patientModal">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ المريض</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="serviceModalTitle">خدمة جديدة</h3>
+                <button class="modal-close" data-close="serviceModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="serviceForm">
+                <input type="hidden" id="serviceId">
+                <div class="form-group">
+                    <label>اسم الخدمة</label>
+                    <input type="text" id="serviceName" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>السعر (د.ج)</label>
+                        <input type="number" id="servicePrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label>المدة (دقيقة)</label>
+                        <input type="number" id="serviceDuration" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>الوصف</label>
+                    <textarea id="serviceDescription" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-outline" data-close="serviceModal">إلغاء</button>
+                    <button type="submit" class="btn btn-primary">حفظ الخدمة</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">تمت العملية بنجاح</span>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E0F2FE"/>
+      <stop offset="1" stop-color="#BAE6FD"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <circle cx="450" cy="280" r="170" fill="#0EA5E9" opacity="0.15"/>
+  <path d="M360 210C360 165 398 130 450 130C502 130 540 165 540 210V280C540 364 496 430 450 468C404 430 360 364 360 280V210Z" fill="#0EA5E9"/>
+  <path d="M450 190L466 226L506 230L476 258L485 296L450 274L415 296L424 258L394 230L434 226L450 190Z" fill="#FFF"/>
+  <text x="450" y="550" text-anchor="middle" fill="#0F172A" font-family="Cairo, Arial" font-size="44" font-weight="700">Teeth Whitening</text>
+</svg>

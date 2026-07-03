@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#DCFCE7"/>
+      <stop offset="1" stop-color="#BBF7D0"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="600" fill="url(#bg)"/>
+  <path d="M330 210C330 160 383 120 450 120C517 120 570 160 570 210V275C570 360 522 430 450 470C378 430 330 360 330 275V210Z" fill="#10B981"/>
+  <circle cx="450" cy="285" r="66" fill="#fff"/>
+  <path d="M415 286L440 312L488 258" stroke="#10B981" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="450" y="550" text-anchor="middle" fill="#0F172A" font-family="Cairo, Arial" font-size="44" font-weight="700">Cavity Treatment</text>
+</svg>
